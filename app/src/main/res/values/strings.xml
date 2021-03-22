@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">NasaTestProject</string>
+    <string name="package_name">nasatestproject</string>
+    <!--SnackBar-->
+    <string name="no_internet_title">Отсутствует подключение к Интернету</string>
+    <string name="db_error">Ошибка при загрузке базы данных</string>
+
+    <string name="imageDescription">nasa photo</string>
+
+    <!--AlertDialog-->
+    <string name="positive_button">OK</string>
+    <string name="title">ОШИБКА</string>
+    <string name="attention">ВНИМАНИЕ</string>
+    <string name="alert_msg">При обработке запроса произошла ошибка</string>
+</resources>

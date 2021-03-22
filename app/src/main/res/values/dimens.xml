@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="zero">0dp</dimen>
+    <dimen name="ten">10dp</dimen>
+    <dimen name="default_value_five">5dp</dimen>
+    <dimen name="default_value_twenty">20dp</dimen>
+    <dimen name="default_value_thirty">30dp</dimen>
+    <dimen name="twenty_five">25dp</dimen>
+
+    <!--Dimens for text-->
+    <dimen name="text_size_eighteen">18sp</dimen>
+    <dimen name="text_size_fourteen">14sp</dimen>
+</resources>
