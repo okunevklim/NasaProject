@@ -5,7 +5,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,13 +19,18 @@ import com.example.nasatestproject.utils.InternetConnectionChecker
 import com.example.nasatestproject.utils.SnackBarHelper
 import com.example.nasatestproject.viewmodels.RoomViewModel
 import com.example.nasatestproject.views.ListView
+import moxy.MvpAppCompatFragment
+import moxy.ktx.moxyPresenter
+import javax.inject.Inject
+import javax.inject.Provider
 
-class ListFragment : Fragment(), ListView, OnPostClickListener {
+class ListFragment : MvpAppCompatFragment(), ListView, OnPostClickListener {
     private lateinit var binding: FragmentListBinding
     private lateinit var roomViewModel: RoomViewModel
     private val nasaPosts = arrayListOf<NasaPost>()
     private val adapter = NasaAdapter(nasaPosts, this)
-    private val presenter = ListPresenter()
+    private val presenter by moxyPresenter { ListPresenter() }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -41,7 +45,7 @@ class ListFragment : Fragment(), ListView, OnPostClickListener {
         roomViewModel = ViewModelProvider(requireActivity()).get(RoomViewModel::class.java)
         binding.nasaRecycler.layoutManager = LinearLayoutManager(requireContext())
         binding.nasaRecycler.adapter = adapter
-        InternetConnectionChecker.checkInternetConnection(viewLifecycleOwner, { isConnected ->
+        InternetConnectionChecker.checkInternetConnection(viewLifecycleOwner) { isConnected ->
             if (isConnected) {
                 Log.i("NASA", "ListFragment is connected, checking database...")
                 presenter.checkDatabase(roomViewModel, true, silentMode = false)
@@ -54,7 +58,7 @@ class ListFragment : Fragment(), ListView, OnPostClickListener {
                     R.drawable.ic_exclamation
                 )
             }
-        })
+        }
     }
 
     override fun setNasaPhotos(nasaPhotos: ArrayList<NasaPost>) {
@@ -76,6 +80,7 @@ class ListFragment : Fragment(), ListView, OnPostClickListener {
         val nasaArray = arrayListOf<NasaPost>()
         nasaArray.clear()
         nasaArray.addAll(nasaPosts)
+        Log.i("NASA", "handleeeeeeeeeeeed")
         adapter.updateNasaPosts(nasaArray)
     }
 

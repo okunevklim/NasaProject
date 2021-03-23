@@ -1,6 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.kotlin_version = "1.4.10"
+    ext.kotlin_version = "1.3.71"
     repositories {
         maven { url "https://www.jitpack.io" }
         google()
@@ -54,5 +54,5 @@ ext {
     daggerCompiler = '2.13'
     loggingInterceptor = '3.6.0'
     scalingView = '2.3.0'
-    moxy = '1.1.1'
+    moxyVersion = '2.2.1'
 }

@@ -94,5 +94,8 @@ dependencies {
     implementation "com.github.chrisbanes:PhotoView:$scalingView"
 
     //Moxy
-    implementation "com.arello-mobile:moxy-android:$moxy"
+    implementation "com.github.moxy-community:moxy:$moxyVersion"
+    kapt "com.github.moxy-community:moxy-compiler:$moxyVersion"
+    implementation "com.github.moxy-community:moxy-androidx:$moxyVersion"
+    implementation "com.github.moxy-community:moxy-ktx:$moxyVersion"
 }

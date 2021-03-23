@@ -2,8 +2,6 @@ package com.example.nasatestproject.presenters
 
 import android.annotation.SuppressLint
 import android.util.Log
-import com.arellomobile.mvp.InjectViewState
-import com.arellomobile.mvp.MvpPresenter
 import com.example.nasatestproject.R
 import com.example.nasatestproject.base.NasaApplication
 import com.example.nasatestproject.di.module.Api
@@ -15,11 +13,12 @@ import com.example.nasatestproject.viewmodels.RoomViewModel
 import com.example.nasatestproject.views.ListView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import moxy.InjectViewState
+import moxy.MvpPresenter
 import javax.inject.Inject
 
 @InjectViewState
-class ListPresenter internal constructor() : MvpPresenter<ListView>() {
-    private val TAG = ListPresenter::class.java.simpleName
+class ListPresenter: MvpPresenter<ListView>() {
 
     @Inject
     lateinit var api: Api

@@ -1,9 +1,12 @@
 package com.example.nasatestproject.views
 
-import com.arellomobile.mvp.MvpView
 import com.example.nasatestproject.models.NasaPost
+import moxy.MvpView
+import moxy.viewstate.strategy.StateStrategyType
+import moxy.viewstate.strategy.alias.AddToEnd
 
-interface ListView: MvpView {
+@AddToEnd
+interface ListView : MvpView {
     fun setNasaPhotos(nasaPhotos: ArrayList<NasaPost>)
     fun showSnackBar(title: Int, backgroundColorID: Int, imageID: Int)
     fun showAlertDialog(messageID: Int)

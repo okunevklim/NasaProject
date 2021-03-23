@@ -9,11 +9,11 @@ class NasaApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         context = this.applicationContext
-        component = buildComponent()
+       component = buildComponent()
     }
 
-    private fun buildComponent(): ApiComponent {
-        return DaggerApiComponent.builder().build()
+   private fun buildComponent(): ApiComponent {
+       return DaggerApiComponent.builder().build()
     }
 
     companion object {

@@ -1,6 +1,7 @@
 package com.example.nasatestproject.utils
 
 import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.observe
 import com.example.nasatestproject.base.NasaApplication
 import com.example.nasatestproject.network.NetworkConnection
 
